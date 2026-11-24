@@ -1,5 +1,87 @@
+/* Variable declarations */
 :root {
   --color-surface: rgba(9, 33, 42, 1);
   --color-background: rgba(6, 23, 30, 1);
   --color-text: rgba(255, 255, 255, 1);
+  --width-content-max: 1440px;
+  --space-page-side: 140px;
+  --font-family-text: "Figtree";
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background);
+  font-family: var(--font-family-text);
+}
+
+/* Header */
+header {
+  background-color: var(--color-surface);
+}
+
+.content-width {
+  max-width: calc(var(--width-content-max) + 2 * var(--space-page-side));
+  margin: 0 auto;
+  padding: 0 var(--space-page-side);
+}
+
+.logo {
+  height: 81px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+/* Gallary */
+main {
+  flex: 1;
+}
+
+h1 {
+  color: var(--color-text);
+  margin-bottom: 160px;
+}
+
+.gallery-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 160px;
+  margin-bottom: 160px;
+}
+
+.gallery-image {
+  width: 150px;
+  height: 150px;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50% 50% 0 0 / 24px 24px 0 0;
+  background-color: var(--color-surface);
+}
+
+footer > img {
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+p {
+  margin-bottom: 32px;
+  font-size: 14px;
+  color: rgba(150, 150, 150, 1);
 }
