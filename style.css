@@ -3,9 +3,10 @@
   --color-surface: rgba(9, 33, 42, 1);
   --color-background: rgba(6, 23, 30, 1);
   --color-text: rgba(255, 255, 255, 1);
+  --color-text-muted: rgba(150, 150, 150, 1);
   --width-content-max: 1440px;
   --space-page-side: 140px;
-  --font-family-text: "Figtree";
+  --font-family-text: "Figtree", Arial, sans-serif;
 }
 
 /* Reset */
@@ -16,11 +17,19 @@
 }
 
 body {
-  min-height: 100dvh;
   display: flex;
   flex-direction: column;
+  min-height: 100dvh;
   background-color: var(--color-background);
   font-family: var(--font-family-text);
+  color: var(--color-text);
+}
+
+/* Layout */
+.content-width {
+  max-width: calc(var(--width-content-max) + 2 * var(--space-page-side));
+  margin: 0 auto;
+  padding: 0 var(--space-page-side);
 }
 
 /* Header */
@@ -28,41 +37,45 @@ header {
   background-color: var(--color-surface);
 }
 
-.content-width {
-  max-width: calc(var(--width-content-max) + 2 * var(--space-page-side));
-  margin: 0 auto;
-  padding: 0 var(--space-page-side);
-}
-
 .logo {
-  height: 81px;
   display: flex;
   align-items: center;
-  justify-content: left;
+  height: 81px;
 }
 
-/* Gallary */
+/* Gallery */
 main {
   flex: 1;
 }
 
 h1 {
-  color: var(--color-text);
-  margin-bottom: 160px;
+  margin-bottom: 80px;
+  font-size: 56px;
 }
 
 .gallery-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   margin-top: 160px;
   margin-bottom: 160px;
+  text-align: center;
+}
+
+.gallery-item {
+  border-radius: 16px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .gallery-image {
   width: 150px;
   height: 150px;
+  border-radius: 16px;
 }
 
 /* Footer */
@@ -80,8 +93,8 @@ footer > img {
   margin-bottom: 16px;
 }
 
-p {
+.copyright {
   margin-bottom: 32px;
   font-size: 14px;
-  color: rgba(150, 150, 150, 1);
+  color: var(--color-text-muted);
 }
